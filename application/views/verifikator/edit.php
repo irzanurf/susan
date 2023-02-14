@@ -298,7 +298,7 @@
             <div class="work-progres" style="background-color: #eef0fd">
                 <div class="row" style="margin-left: 5px; margin-right: 5px;">
                     <form method="post" enctype="multipart/form-data"
-                        action="<?php echo base_url()?>departemen/update_pengajuan">
+                        action="<?php echo base_url()?>verifikator/update_pengajuan">
                         <h2 style="text-align: center;">Edit SK Dekan</h2>
                         <hr>
                         <input type="hidden" name="id" value="<?=$id?>" />

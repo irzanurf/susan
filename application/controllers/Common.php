@@ -206,11 +206,12 @@ class Common extends CI_Controller {
                     $val_menimbang = str_replace('<strong>', '<b>', $val_menimbang);
                     $val_menimbang = str_replace('</strong>', '</b>', $val_menimbang);
                     $val_menimbang = str_replace('<li>', '<br>     ', $val_menimbang);
-                    $val_menimbang = str_replace('</li>', '', $val_menimbang);
+                    $val_menimbang = str_replace('</li>', '', $val_menimbang);	
                     $val_menimbang1 = HTMLtoOpenXML::getInstance()->fromHTML("$val_menimbang");
+		            $val_menimbang2 = str_replace('&nbsp;', ' ', $val_menimbang1);
                     $set_menimbang = "$num_menimbang.";
                     $templateProcessor->setValue('a#'."$i",  "$set_menimbang", 1);
-                    $templateProcessor->setValue('menimbang#'."$i",  "$val_menimbang1", 1);
+                    $templateProcessor->setValue('menimbang#'."$i",  "$val_menimbang2", 1);
                     $num_menimbang++;
                 };
 
@@ -218,6 +219,7 @@ class Common extends CI_Controller {
                 $templateProcessor->cloneRow('b', $count_b);
                 for($j=1; $j<=$count_b; $j++){
                     $val_mengingat = str_replace('&', '&amp;', $mengingat[$j-1]->mengingat);
+                    
                     $val_mengingat = str_replace('<p>', '', $val_mengingat);
                     $val_mengingat = str_replace('</p>', '', $val_mengingat);
                     $val_mengingat = str_replace('<ol>', '', $val_mengingat);
@@ -226,10 +228,12 @@ class Common extends CI_Controller {
                     $val_mengingat = str_replace('</strong>', '</b>', $val_mengingat);
                     $val_mengingat = str_replace('<li>', '<br>     ', $val_mengingat);
                     $val_mengingat = str_replace('</li>', '', $val_mengingat);
+
                     $val_mengingat1 = HTMLtoOpenXML::getInstance()->fromHTML("$val_mengingat");
+		            $val_mengingat2 = str_replace('&nbsp;', ' ', $val_mengingat1);
                     $set_mengingat = "$num_mengingat.";
                     $templateProcessor->setValue('b#'."$j",  "$set_mengingat", 1);
-                    $templateProcessor->setValue('mengingat#'."$j",  "$val_mengingat1", 1);
+                    $templateProcessor->setValue('mengingat#'."$j",  "$val_mengingat2", 1);
                     $num_mengingat++;
                 };
 
@@ -237,6 +241,7 @@ class Common extends CI_Controller {
                 $templateProcessor->cloneRow('c', $count_c);
                 for($k=1; $k<=$count_c; $k++){
                     $val_menetapkan = str_replace('&', '&amp;', $menetapkan[$k-1]->menetapkan);
+		    
                     $val_menetapkan = str_replace('<p>', '', $val_menetapkan);
                     $val_menetapkan = str_replace('</p>', '', $val_menetapkan);
                     $val_menetapkan = str_replace('<ol>', '', $val_menetapkan);
@@ -245,6 +250,7 @@ class Common extends CI_Controller {
                     $val_menetapkan = str_replace('</strong>', '</b>', $val_menetapkan);
                     $val_menetapkan = str_replace('<li>', '<br>     ', $val_menetapkan);
                     $val_menetapkan = str_replace('</li>', '', $val_menetapkan);
+		    
                     // $val_menetapkan = str_replace('<i><strong><u>', "<w:r><w:rPr><w:i/><w:b/><w:u w:val='single'/></w:rPr><w:t>", $val_menetapkan);
                     // $val_menetapkan = str_replace('</i></strong></u>', '</w:t></w:r>', $val_menetapkan);
                     // $val_menetapkan = str_replace('<i><strong>', '<w:r><w:rPr><w:i/><w:b/></w:rPr><w:t>', $val_menetapkan);
@@ -264,9 +270,10 @@ class Common extends CI_Controller {
                     $num_new = strtoupper(terbilang($num_menetapkan));
                     $set_menetapkan = "KE$num_new";
                     $val_menetapkan1 = HTMLtoOpenXML::getInstance()->fromHTML("$val_menetapkan");
+	     	        $val_menetapkan2 = str_replace('&nbsp;', ' ', $val_menetapkan1);
                     // $val_menetapkan1 = str_replace("xml:space='preserve'", '', $val_menetapkan1);
                     $templateProcessor->setValue('c#'."$k",  "$set_menetapkan", 1);
-                    $templateProcessor->setValue('menetapkan#'."$k", $val_menetapkan1, 1);
+                    $templateProcessor->setValue('menetapkan#'."$k", $val_menetapkan2, 1);
                     // $templateProcessor->setValue('menetapkan#'."$k", htmlentities("$val_menetapkan1"), 1);
                     $num_menetapkan++;
                 };
@@ -314,6 +321,7 @@ class Common extends CI_Controller {
                 $templateProcessor->cloneRow('a', $count_a);
                 for($i=1; $i<=$count_a; $i++){
                     $val_menimbang = str_replace('&', '&amp;', $menimbang[$i-1]->menimbang);
+		    
                     $val_menimbang = str_replace('<p>', '', $val_menimbang);
                     $val_menimbang = str_replace('</p>', '', $val_menimbang);
                     $val_menimbang = str_replace('<ol>', '', $val_menimbang);
@@ -322,6 +330,7 @@ class Common extends CI_Controller {
                     $val_menimbang = str_replace('</strong>', '</b>', $val_menimbang);
                     $val_menimbang = str_replace('<li>', '<br>     ', $val_menimbang);
                     $val_menimbang = str_replace('</li>', '', $val_menimbang);
+		    $val_menimbang = str_replace('&nbsp;', ' ', $val_menimbang);
                     $val_menimbang1 = HTMLtoOpenXML::getInstance()->fromHTML("$val_menimbang");
                     $set_menimbang = "$num_menimbang.";
                     $templateProcessor->setValue('a#'."$i",  "$set_menimbang", 1);
@@ -333,6 +342,7 @@ class Common extends CI_Controller {
                 $templateProcessor->cloneRow('b', $count_b);
                 for($j=1; $j<=$count_b; $j++){
                     $val_mengingat = str_replace('&', '&amp;', $mengingat[$j-1]->mengingat);
+		    
                     $val_mengingat = str_replace('<p>', '', $val_mengingat);
                     $val_mengingat = str_replace('</p>', '', $val_mengingat);
                     $val_mengingat = str_replace('<ol>', '', $val_mengingat);
@@ -341,6 +351,7 @@ class Common extends CI_Controller {
                     $val_mengingat = str_replace('</strong>', '</b>', $val_mengingat);
                     $val_mengingat = str_replace('<li>', '<br>     ', $val_mengingat);
                     $val_mengingat = str_replace('</li>', '', $val_mengingat);
+		    $val_mengingat = str_replace('&nbsp;', ' ', $val_mengingat);
                     $val_mengingat1 = HTMLtoOpenXML::getInstance()->fromHTML("$val_mengingat");
                     $set_mengingat = "$num_mengingat.";
                     $templateProcessor->setValue('b#'."$j",  "$set_mengingat", 1);
@@ -352,6 +363,7 @@ class Common extends CI_Controller {
                 $templateProcessor->cloneRow('c', $count_c);
                 for($k=1; $k<=$count_c; $k++){
                     $val_menetapkan = str_replace('&', '&amp;', $menetapkan[$k-1]->menetapkan);
+		    
                     $val_menetapkan = str_replace('<p>', '', $val_menetapkan);
                     $val_menetapkan = str_replace('</p>', '', $val_menetapkan);
                     $val_menetapkan = str_replace('<ol>', '', $val_menetapkan);
@@ -360,6 +372,7 @@ class Common extends CI_Controller {
                     $val_menetapkan = str_replace('</strong>', '</b>', $val_menetapkan);
                     $val_menetapkan = str_replace('<li>', '<br>     ', $val_menetapkan);
                     $val_menetapkan = str_replace('</li>', '', $val_menetapkan);
+		    $val_menetapkan = str_replace('&nbsp;', ' ', $val_menetapkan);
                     $num_new = strtoupper(terbilang($num_menetapkan));
                     $set_menetapkan = "KE$num_new";
                     $val_menetapkan1 = HTMLtoOpenXML::getInstance()->fromHTML("$val_menetapkan");

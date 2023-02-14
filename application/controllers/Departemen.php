@@ -195,6 +195,7 @@ class Departemen extends CI_Controller {
             // print_r($mengingat);
             // echo $mengingat[0];
             if($mengingat[$i]!=""||$mengingat[$i]!=null||$mengingat[$i]!=0){
+                $mengingat[$i] = str_replace('&nbsp;', ' ', $mengingat[$i]);
                 $data_mengingat[$i] = [
                     'id_sk' => $id,
                     'mengingat' => $mengingat[$i],
@@ -211,6 +212,7 @@ class Departemen extends CI_Controller {
         for($i=0; $i<count($menimbang)-1; $i++)
         {
             if($menimbang[$i]!=""||$menimbang[$i]!=null||$menimbang[$i]!=0){
+                $menimbang[$i] = str_replace('&nbsp;', ' ', $menimbang[$i]);
                 $data_menimbang[$i] = [
                     'id_sk' => $id,
                     'menimbang' => $menimbang[$i],
@@ -226,6 +228,7 @@ class Departemen extends CI_Controller {
         for($i=0; $i<count($menetapkan)-1; $i++)
         {
             if($menetapkan[$i]!=""||$menetapkan[$i]!=null||$menetapkan[$i]!=0){
+                $menetapkan[$i] = str_replace('&nbsp;', ' ', $menetapkan[$i]);
                 $data_menetapkan[$i] = [
                     'id_sk' => $id,
                     'menetapkan' => $menetapkan[$i],
@@ -354,6 +357,7 @@ class Departemen extends CI_Controller {
         for($i=0; $i<count($mengingat)-1; $i++)
         {
             if($mengingat[$i]!=""||$mengingat[$i]!=null||$mengingat[$i]!=0){
+                $mengingat[$i] = str_replace('&nbsp;', ' ', $mengingat[$i]);
                 $data_mengingat[$i] = [
                     'id_sk' => $id,
                     'mengingat' => $mengingat[$i],
@@ -371,6 +375,7 @@ class Departemen extends CI_Controller {
         for($i=0; $i<count($menimbang)-1; $i++)
         {
             if($menimbang[$i]!=""||$menimbang[$i]!=null||$menimbang[$i]!=0){
+                $menimbang[$i] = str_replace('&nbsp;', ' ', $menimbang[$i]);
                 $data_menimbang[$i] = [
                     'id_sk' => $id,
                     'menimbang' => $menimbang[$i],
@@ -388,6 +393,7 @@ class Departemen extends CI_Controller {
         for($i=0; $i<count($menetapkan)-1; $i++)
         {
             if($menetapkan[$i]!=""||$menetapkan[$i]!=null||$menetapkan[$i]!=0){
+                $menetapkan[$i] = str_replace('&nbsp;', ' ', $menetapkan[$i]);
                 $data_menetapkan[$i] = [
                     'id_sk' => $id,
                     'menetapkan' => $menetapkan[$i],

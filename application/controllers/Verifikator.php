@@ -340,7 +340,7 @@ class Verifikator extends CI_Controller {
         $menetapkan = $this->input->post('menetapkan[]');
         $tgl = date('Y-m-d', strtotime(date('Y-m-d')));
         $data = [
-            'tgl'=>$tgl,
+            // 'tgl'=>$tgl,
             'judul'=>$judul,
         ];
         $cond = ['id'=>$id];
@@ -359,6 +359,7 @@ class Verifikator extends CI_Controller {
         for($i=0; $i<count($mengingat)-1; $i++)
         {
             if($mengingat[$i]!=""||$mengingat[$i]!=null||$mengingat[$i]!=0){
+                $mengingat[$i] = str_replace('&nbsp;', ' ', $mengingat[$i]);
                 $data_mengingat[$i] = [
                     'id_sk' => $id,
                     'mengingat' => $mengingat[$i],
@@ -376,6 +377,7 @@ class Verifikator extends CI_Controller {
         for($i=0; $i<count($menimbang)-1; $i++)
         {
             if($menimbang[$i]!=""||$menimbang[$i]!=null||$menimbang[$i]!=0){
+                $menimbang[$i] = str_replace('&nbsp;', ' ', $menimbang[$i]);
                 $data_menimbang[$i] = [
                     'id_sk' => $id,
                     'menimbang' => $menimbang[$i],
@@ -393,6 +395,7 @@ class Verifikator extends CI_Controller {
         for($i=0; $i<count($menetapkan)-1; $i++)
         {
             if($menetapkan[$i]!=""||$menetapkan[$i]!=null||$menetapkan[$i]!=0){
+                $menetapkan[$i] = str_replace('&nbsp;', ' ', $menetapkan[$i]);
                 $data_menetapkan[$i] = [
                     'id_sk' => $id,
                     'menetapkan' => $menetapkan[$i],
@@ -463,6 +466,7 @@ class Verifikator extends CI_Controller {
         $this->session->set_flashdata('info', '<div class="alert alert-success" style="margin-top: 3px">
         <div class="header"><b><i class="fa fa-exclamation-circle"></i> SUCCESS</b> Pengajuan berhasil ditambahkan, silahkan pilih "detail" untuk melihat progres</div></div>');
         redirect(base_url("common/create_sk/$id"));
+        // print_r($mengingat);
     }
     
     public function delete_pengajuan(){

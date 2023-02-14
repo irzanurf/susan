@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": false,
+    "beautify.ignore": "",
+    "save-typing.languages": [
+
+        "*"
+    ],
+    "files.refactoring.autoSave": true
+}
